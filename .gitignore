@@ -56,7 +56,7 @@ logs/
 htmlcov/
 .mypy_cache/
 .ruff_cache/
-.kiro/ 
+.kiro/
 
 # AWS
 .aws/
