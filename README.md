@@ -1,0 +1,109 @@
+# AutoOps Retail Optimization
+
+A multi-agent AI system for retail optimization using AWS Strands Agents framework, powered by Anthropic Claude via AWS Bedrock.
+
+## Overview
+
+This system consists of three specialized AI agents (Pricing, Inventory, and Promotion) that collaborate to reduce waste and maximize profit through intelligent decision-making and real-time adaptations to market conditions.
+
+## Architecture
+
+- **AWS Strands Agents**: Multi-agent orchestration framework
+- **Amazon Nova Micro**: LLM via AWS Bedrock
+- **ChromaDB**: Vector database for agent memory
+- **FastAPI**: Execution layer and REST API
+- **Streamlit**: Real-time monitoring dashboard
+
+## Prerequisites
+
+- Python 3.9 or higher
+- uv package manager
+- AWS account with Bedrock access
+- AWS credentials configured
+
+## Installation
+
+1. **Install uv** (if not already installed):
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+2. **Clone and setup the project**:
+   ```bash
+   git clone <repository-url>
+   cd autoops-retail-optimization
+   ```
+
+3. **Create virtual environment and install dependencies**:
+   ```bash
+   uv venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   uv pip install -e .
+   ```
+
+4. **Configure environment variables**:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your AWS credentials and configuration
+   ```
+
+## Configuration
+
+### AWS Setup
+
+1. **Enable AWS Bedrock access** for Anthropic Claude models in your AWS account
+2. **Configure AWS credentials** in `.env` file or use AWS CLI/IAM roles
+3. **Ensure proper IAM permissions** for Bedrock model access
+
+### Environment Variables
+
+Key configuration variables in `.env`:
+
+- `AWS_REGION`: AWS region (default: us-east-1)
+- `AWS_ACCESS_KEY_ID`: Your AWS access key
+- `AWS_SECRET_ACCESS_KEY`: Your AWS secret key
+- `BEDROCK_MODEL_ID`: Anthropic Claude model ID
+- `CHROMADB_PERSIST_DIRECTORY`: Local directory for vector database
+
+## Development
+
+### Running Tests
+
+```bash
+uv run pytest
+```
+
+### Code Formatting
+
+```bash
+uv run black .
+uv run isort .
+uv run ruff check .
+```
+
+### Type Checking
+
+```bash
+uv run mypy .
+```
+
+## Project Structure
+
+```
+autoops-retail-optimization/
+├── agents/          # AI agent implementations
+├── tools/           # Agent execution functions
+├── models/          # Data models and schemas
+├── api/             # FastAPI REST endpoints
+├── config/          # Configuration management
+├── simulation/      # Retail data simulation
+├── dashboard/       # Streamlit monitoring UI
+├── tests/           # Test suite
+├── .env.example     # Environment configuration template
+├── pyproject.toml   # Project dependencies and metadata
+└── README.md        # This file
+```
+
+## License
+
+MIT License - see LICENSE file for details.
