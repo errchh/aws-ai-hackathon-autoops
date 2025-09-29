@@ -57,6 +57,7 @@ htmlcov/
 .mypy_cache/
 .ruff_cache/
 .kiro/
+PRD.md
 
 # AWS
 .aws/
