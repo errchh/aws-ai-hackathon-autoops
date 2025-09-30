@@ -1,10 +1,12 @@
 # AutoOps Retail Optimization
 
-A multi-agent AI system for retail optimization using AWS Strands Agents framework, powered by Anthropic Claude via AWS Bedrock.
+![AutoOps Architecture Flowchart](autoops_flowchart.drawio.png)
+
+A multi-agent AI system for retail optimisation using AWS Strands Agents framework, powered by Amazon Nova Micro via AWS Bedrock.
 
 ## Overview
 
-This system consists of three specialized AI agents (Pricing, Inventory, and Promotion) that collaborate to reduce waste and maximize profit through intelligent decision-making and real-time adaptations to market conditions.
+This system consists of three specialised AI agents (Pricing, Inventory, and Promotion) that collaborate to reduce waste and maximise profit through intelligent decision-making and real-time adaptations to market conditions.
 
 ## Architecture
 
@@ -55,7 +57,7 @@ This system consists of three specialized AI agents (Pricing, Inventory, and Pro
 
 ### AWS Setup
 
-1. **Enable AWS Bedrock access** for Anthropic Claude models in your AWS account
+1. **Enable AWS Bedrock access** for Amazon Nova Micro model in your AWS account
 2. **Configure AWS credentials** in `.env` file or use AWS CLI/IAM roles
 3. **Ensure proper IAM permissions** for Bedrock model access
 
@@ -66,5 +68,5 @@ Key configuration variables in `.env`:
 - `AWS_REGION`: AWS region (default: us-east-1)
 - `AWS_ACCESS_KEY_ID`: Your AWS access key
 - `AWS_SECRET_ACCESS_KEY`: Your AWS secret key
-- `BEDROCK_MODEL_ID`: Anthropic Claude model ID
+- `BEDROCK_MODEL_ID`: Amazon Nova Micro model ID
 - `CHROMADB_PERSIST_DIRECTORY`: Local directory for vector database
