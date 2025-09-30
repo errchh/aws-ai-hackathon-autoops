@@ -11,8 +11,7 @@ This system consists of three specialized AI agents (Pricing, Inventory, and Pro
 - **AWS Strands Agents**: Multi-agent orchestration framework
 - **Amazon Nova Micro**: LLM via AWS Bedrock
 - **ChromaDB**: Vector database for agent memory
-- **FastAPI**: Execution layer and REST API
-- **Streamlit**: Real-time monitoring dashboard
+- **Langfuse**: Observability and tracing
 
 ## Prerequisites
 
@@ -37,14 +36,19 @@ This system consists of three specialized AI agents (Pricing, Inventory, and Pro
 3. **Create virtual environment and install dependencies**:
    ```bash
    uv venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   uv pip install -e .
+   source .venv/bin/activate  
+   uv sync 
    ```
 
 4. **Configure environment variables**:
    ```bash
    cp .env.example .env
    # Edit .env with your AWS credentials and configuration
+   ```
+
+5. **Start simulation engine**:
+   ```bash
+   uv run main.py
    ```
 
 ## Configuration
@@ -64,46 +68,3 @@ Key configuration variables in `.env`:
 - `AWS_SECRET_ACCESS_KEY`: Your AWS secret key
 - `BEDROCK_MODEL_ID`: Anthropic Claude model ID
 - `CHROMADB_PERSIST_DIRECTORY`: Local directory for vector database
-
-## Development
-
-### Running Tests
-
-```bash
-uv run pytest
-```
-
-### Code Formatting
-
-```bash
-uv run black .
-uv run isort .
-uv run ruff check .
-```
-
-### Type Checking
-
-```bash
-uv run mypy .
-```
-
-## Project Structure
-
-```
-autoops-retail-optimization/
-├── agents/          # AI agent implementations
-├── tools/           # Agent execution functions
-├── models/          # Data models and schemas
-├── api/             # FastAPI REST endpoints
-├── config/          # Configuration management
-├── simulation/      # Retail data simulation
-├── dashboard/       # Streamlit monitoring UI
-├── tests/           # Test suite
-├── .env.example     # Environment configuration template
-├── pyproject.toml   # Project dependencies and metadata
-└── README.md        # This file
-```
-
-## License
-
-MIT License - see LICENSE file for details.
