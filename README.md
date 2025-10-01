@@ -31,8 +31,8 @@ This system consists of three specialised AI agents (Pricing, Inventory, and Pro
 
 2. **Clone and setup the project**:
    ```bash
-   git clone <repository-url>
-   cd autoops-retail-optimization
+   git clone https://github.com/errchh/aws-ai-hackathon-autoops.git
+   cd aws-ai-hackathon-autoops
    ```
 
 3. **Create virtual environment and install dependencies**:
