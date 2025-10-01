@@ -1,4 +1,4 @@
-# AutoOps Retail Optimization
+# AutoOps Retail Optimisation
 
 ![AutoOps Architecture Flowchart](autoops_flowchart.drawio.png)
 
@@ -61,12 +61,26 @@ This system consists of three specialised AI agents (Pricing, Inventory, and Pro
 2. **Configure AWS credentials** in `.env` file or use AWS CLI/IAM roles
 3. **Ensure proper IAM permissions** for Bedrock model access
 
+### Langfuse Setup
+
+1. **Create a Langfuse account** at [langfuse.com](https://langfuse.com)
+2. **Create a new project** in your Langfuse dashboard
+3. **Get your API credentials** from the project settings
+
 ### Environment Variables
 
 Key configuration variables in `.env`:
 
+**AWS Configuration:**
 - `AWS_REGION`: AWS region (default: us-east-1)
 - `AWS_ACCESS_KEY_ID`: Your AWS access key
 - `AWS_SECRET_ACCESS_KEY`: Your AWS secret key
 - `BEDROCK_MODEL_ID`: Amazon Nova Micro model ID
+
+**Langfuse Configuration:**
+- `LANGFUSE_PUBLIC_KEY`: Your Langfuse public key
+- `LANGFUSE_SECRET_KEY`: Your Langfuse secret key
+- `LANGFUSE_HOST`: Langfuse host URL (default: https://cloud.langfuse.com)
+
+**ChromaDB Configuration:**
 - `CHROMADB_PERSIST_DIRECTORY`: Local directory for vector database
